@@ -1,5 +1,5 @@
 import {ref} from 'vue'
-export default function userPost(){
+export default function usePost(){
     const posts = ref([])
     const post = ref(null)
     const baseURL ="https://jsonplaceholder.typicode.com/posts"

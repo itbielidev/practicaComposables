@@ -7,6 +7,6 @@
 <script setup>
 import userResource from '../composables/userPost.js'
 import PostCard from "../components/PostCard.vue"
-const {posts, llegirPost} = userPost('posts')
-llegirPost()
+const {posts, llegirPosts} = userPost('posts')
+llegirPosts()
 </script>

@@ -1,3 +1,21 @@
+<script setup>
+import {UseRouter} from 'vue-router'
+import {ref, watch} from 'vue'
+
+const router = useRouter()
+
+function llegirPost(id){
+  router.push({
+    
+  })
+}
+
+const props = defineProps({
+  post: Object,
+});
+const post = { ...props.post };
+</script>
+
 <template>
   <div
     class="
@@ -24,9 +42,3 @@
     </router-link>
   </div>
 </template>
-<script setup>
-const props = defineProps({
-  post: Object,
-});
-const post = { ...props.post };
-</script>
