@@ -6,12 +6,16 @@
   </div>
 </template>
 <script setup>
-const post = {
-  title:
-    "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-  body: "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto",
-};
-const user = {
-  name: "Leanne Graham",
-};
+import { onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+import usePosts from '../composables/usePosts'
+
+const route = useRoute()
+const postId = route.params.id
+const {posts: post, users: user, llegirPosts, llegirUsers} = usePosts()
+
+onMounted(async () => {
+  await llegirPosts(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+  await llegirUsers(`https://jsonplaceholder.typicode.com/users/${post.value.id}`)
+})
 </script>

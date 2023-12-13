@@ -4,9 +4,9 @@
   </div>
 </template>
 
-<script setup>
-import userResource from '../composables/userPost.js'
+<script setup >
+import usePost from '../composables/usePosts.js'
 import PostCard from "../components/PostCard.vue"
-const {posts, llegirPosts} = userPost('posts')
-llegirPosts()
+const {posts, llegirPosts} = usePost()
+llegirPosts("https://jsonplaceholder.typicode.com/posts")
 </script>
